@@ -11,6 +11,8 @@ export const portfolioData: PortfolioData = {
     social: {
       github: 'https://github.com/clementthee',
       linkedin: 'https://www.linkedin.com/in/hector-clemente-martinez-perez/',
+      whatsapp:
+        'https://wa.me/50236939072?text=Hola%20Hector,%20vi%20tu%20portafolio%20y%20me%20gustaria%20conversar%20contigo.',
     },
   },
   experience: [
@@ -54,12 +56,13 @@ export const portfolioData: PortfolioData = {
   ],
   projects: [
     {
-      title: 'transparencia-gt',
+      title: 'aura-engine',
       description:
-        'Aplicación web de código abierto para analizar datos de contrataciones públicas y redes de contratistas en Guatemala.',
-      technologies: ['Astro', 'React', 'Docker', 'TypeScript', 'Python'],
-      repository: 'https://github.com/clementthee/transparencia-gt',
+        "Proyecto desarrollado para la hackatón 'The Next Craft'. Engine/plataforma enfocada en arquitectura moderna con integraciones de AI.",
+      technologies: ['Next.js', 'TypeScript', 'Convex', 'React', 'Tailwind CSS', 'OpenRouter', 'Clerk'],
+      repository: 'https://github.com/jordidimass/auraengine',
       featured: true,
+      hackathon: 'The Next Craft Hackathon — Participant',
     },
   ],
   education: [
@@ -68,20 +71,60 @@ export const portfolioData: PortfolioData = {
       degree: 'Full Stack Web Development & Cloud Deploy',
       status: 'completed',
     },
+  ],
+  certifications: [
     {
-      institution: 'Georgia Tech',
-      degree: 'Supply Chain Management',
-      status: 'certification',
+      title: 'EF SET English Certificate',
+      issuer: 'EF SET',
+      badge: 'C2 Proficient (72/100)',
+      credentialUrl: 'https://cert.efset.org/SBre7w',
     },
     {
-      institution: 'Google',
-      degree: 'Google Data Analytics Professional Certificate',
-      status: 'certification',
+      title: 'Supply Chain Principles',
+      issuer: 'Georgia Tech',
+      credentialUrl: 'https://www.coursera.org/account/accomplishments/verify/6HQBJH8L6VFS',
     },
     {
-      institution: 'EF SET',
-      degree: 'EF SET English Certificate — C1 Advanced',
-      status: 'certification',
+      title: 'Google Data Analytics Specialization',
+      issuer: 'Google',
+      badge: 'Professional Certificate',
+      modules: [
+        {
+          title: 'Foundations: Data, Data, Everywhere',
+          issuer: 'Google',
+          credentialUrl: 'https://www.coursera.org/account/accomplishments/verify/4R5Q5TXAXBPE',
+        },
+        {
+          title: 'Ask Questions to Make Data-Driven Decisions',
+          issuer: 'Google',
+          credentialUrl: 'https://www.coursera.org/account/accomplishments/verify/WNZA3ZYYPFNK',
+        },
+        {
+          title: 'Prepare Data for Exploration',
+          issuer: 'Google',
+          credentialUrl: 'https://www.coursera.org/account/accomplishments/verify/1MMKME874A5K',
+        },
+        {
+          title: 'Process Data from Dirty to Clean',
+          issuer: 'Google',
+          credentialUrl: 'https://www.coursera.org/account/accomplishments/verify/O6PMDTB9R33H',
+        },
+        {
+          title: 'Analyze Data to Answer Questions',
+          issuer: 'Google',
+          credentialUrl: 'https://www.coursera.org/account/accomplishments/verify/BAR10B2K98PF',
+        },
+        {
+          title: 'Share Data Through the Art of Visualization',
+          issuer: 'Google',
+          credentialUrl: 'https://www.coursera.org/account/accomplishments/verify/748MBI7HYB87',
+        },
+      ],
+    },
+    {
+      title: 'Excel Basics for Data Analysis',
+      issuer: 'IBM',
+      credentialUrl: 'https://www.coursera.org/account/accomplishments/verify/74GQ7GXXWF3D',
     },
   ],
   skills: [

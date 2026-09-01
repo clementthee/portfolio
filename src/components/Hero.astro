@@ -1,71 +1,74 @@
 ---
 import { portfolioData } from '@/data/portfolioData';
 import CopyEmailButton from '@/components/CopyEmailButton';
+import HeroTerminal from '@/components/HeroTerminal';
 
 const { personal } = portfolioData;
 ---
 
 <section class="mb-24 pt-8">
-  <!-- Terminal window frame -->
-  <div class="card-surface overflow-hidden">
-    <!-- Title bar -->
-    <div class="flex items-center gap-2 border-b border-white/5 bg-zinc-900/80 px-4 py-3">
-      <span class="size-3 rounded-full bg-red-500/80"></span>
-      <span class="size-3 rounded-full bg-yellow-500/80"></span>
-      <span class="size-3 rounded-full bg-emerald-500/80"></span>
-      <span class="ml-2 font-code text-xs text-zinc-500">~/hector-clemente</span>
-    </div>
-
-    <div class="p-6 sm:p-8">
-      <!-- Availability badge -->
-      <div class="mb-6 inline-flex items-center gap-2 rounded-full border border-emerald-500/20 bg-emerald-500/5 px-3 py-1">
-        <span class="relative flex size-2">
-          <span class="absolute inline-flex size-full animate-ping rounded-full bg-emerald-400 opacity-60"></span>
-          <span class="relative inline-flex size-2 rounded-full bg-emerald-400"></span>
-        </span>
-        <span class="font-code text-xs text-emerald-400/90">
-          Open for Backend &amp; Platform opportunities
-        </span>
+  <div class="grid items-start gap-6 lg:grid-cols-2 lg:gap-8">
+    <!-- Hero content -->
+    <div class="card-surface overflow-hidden">
+      <div class="flex items-center gap-2 border-b border-white/5 bg-zinc-900/80 px-4 py-3">
+        <span class="size-3 rounded-full bg-red-500/80"></span>
+        <span class="size-3 rounded-full bg-yellow-500/80"></span>
+        <span class="size-3 rounded-full bg-emerald-500/80"></span>
+        <span class="ml-2 font-code text-xs text-zinc-500">~/hector-clemente</span>
       </div>
 
-      <p class="mb-3 font-code text-sm text-cyan-500/80">
-        <span class="text-zinc-600">const</span> developer = {'{'}
-      </p>
+      <div class="p-6 sm:p-8">
+        <div class="mb-6 inline-flex items-center gap-2 rounded-full border border-emerald-500/20 bg-emerald-500/5 px-3 py-1">
+          <span class="relative flex size-2">
+            <span class="absolute inline-flex size-full animate-ping rounded-full bg-emerald-400 opacity-60"></span>
+            <span class="relative inline-flex size-2 rounded-full bg-emerald-400"></span>
+          </span>
+          <span class="font-code text-xs text-emerald-400/90">
+            Open for Backend &amp; Platform opportunities
+          </span>
+        </div>
 
-      <h1 class="mb-2 text-3xl font-bold tracking-tight text-zinc-50 sm:text-4xl lg:text-5xl">
-        <span class="text-cyan-500/70">"</span>{personal.name}<span class="text-cyan-500/70">"</span>
-      </h1>
+        <p class="mb-3 font-code text-sm text-cyan-500/80">
+          <span class="text-zinc-600">const</span> developer = {'{'}
+        </p>
 
-      <p class="mb-6 font-code text-base text-cyan-400 sm:text-lg">
-        role: <span class="text-zinc-300">"{personal.title}"</span>,
-      </p>
+        <h1 class="mb-2 text-3xl font-bold tracking-tight text-zinc-50 sm:text-4xl">
+          <span class="text-cyan-500/70">"</span>{personal.name}<span class="text-cyan-500/70">"</span>
+        </h1>
 
-      <p class="mb-2 max-w-2xl text-base leading-relaxed text-zinc-400 sm:text-lg">
-        Ingeniero de software enfocado en <span class="text-cyan-400/90">diseño de sistemas</span>,
-        APIs <span class="font-code text-sm text-cyan-500/80">REST</span> /
-        <span class="font-code text-sm text-cyan-500/80">GraphQL</span>,
-        arquitecturas escalables y <span class="text-cyan-400/90">diagnóstico de logs</span>
-        para resolver incidencias de plataforma con precisión técnica.
-      </p>
+        <p class="mb-6 font-code text-base text-cyan-400 sm:text-lg">
+          role: <span class="text-zinc-300">"{personal.title}"</span>,
+        </p>
 
-      <p class="mb-8 font-code text-sm text-zinc-600">
-        location: "{personal.location}" {'};'}
-      </p>
+        <p class="mb-2 text-base leading-relaxed text-zinc-400 sm:text-lg">
+          Ingeniero de software enfocado en <span class="text-cyan-400/90">diseño de sistemas</span>,
+          APIs <span class="font-code text-sm text-cyan-500/80">REST</span> /
+          <span class="font-code text-sm text-cyan-500/80">GraphQL</span>,
+          arquitecturas escalables y <span class="text-cyan-400/90">diagnóstico de logs</span>
+          para resolver incidencias de plataforma con precisión técnica.
+        </p>
 
-      <!-- CTAs -->
-      <div class="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
-        <a href="#proyectos" class="btn-primary">
-          Ver Proyectos
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M5 12h14"></path>
-            <path d="m12 5 7 7-7 7"></path>
-          </svg>
-        </a>
-        <a href="#contacto" class="btn-secondary">
-          Contactar
-        </a>
-        <CopyEmailButton email={personal.email} client:visible />
+        <p class="mb-8 font-code text-sm text-zinc-600">
+          location: "{personal.location}" {'};'}
+        </p>
+
+        <div class="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
+          <a href="#proyectos" class="btn-primary">
+            Ver Proyectos
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M5 12h14"></path>
+              <path d="m12 5 7 7-7 7"></path>
+            </svg>
+          </a>
+          <a href="#contacto" class="btn-secondary">
+            Contactar
+          </a>
+          <CopyEmailButton email={personal.email} client:visible />
+        </div>
       </div>
     </div>
+
+    <!-- Interactive terminal -->
+    <HeroTerminal client:visible />
   </div>
 </section>

@@ -1,6 +1,7 @@
 export interface SocialLinks {
   github?: string;
   linkedin?: string;
+  whatsapp?: string;
 }
 
 export interface PersonalDetails {
@@ -29,6 +30,7 @@ export interface Project {
   repository?: string;
   demo?: string;
   featured: boolean;
+  hackathon?: string;
 }
 
 export interface Education {
@@ -36,6 +38,23 @@ export interface Education {
   degree: string;
   period?: string;
   status: 'completed' | 'in-progress' | 'certification';
+}
+
+export interface CertificationModule {
+  title: string;
+  issuer: string;
+  credentialUrl?: string;
+  date?: string;
+  badge?: string;
+}
+
+export interface Certification {
+  title: string;
+  issuer: string;
+  credentialUrl?: string;
+  date?: string;
+  badge?: string;
+  modules?: CertificationModule[];
 }
 
 export interface SkillCategory {
@@ -48,5 +67,6 @@ export interface PortfolioData {
   experience: WorkExperience[];
   projects: Project[];
   education: Education[];
+  certifications: Certification[];
   skills: SkillCategory[];
 }
