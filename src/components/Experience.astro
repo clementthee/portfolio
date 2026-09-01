@@ -1,0 +1,68 @@
+---
+import { portfolioData } from '@/data/portfolioData';
+
+const { experience } = portfolioData;
+---
+
+<section id="experiencia" class="mb-24 scroll-mt-24">
+  <h2 class="section-heading">01 — Experiencia</h2>
+
+  <div class="relative">
+    <!-- Timeline line -->
+    <div
+      class="absolute top-2 bottom-2 left-[7px] w-px bg-gradient-to-b from-cyan-500/40 via-cyan-500/20 to-transparent sm:left-[11px]"
+      aria-hidden="true"
+    >
+    </div>
+
+    <ol class="space-y-10">
+      {
+        experience.map((job, index) => (
+          <li class="relative pl-8 sm:pl-10">
+            <!-- Timeline dot -->
+            <div
+              class="absolute top-1.5 left-0 flex size-[15px] items-center justify-center rounded-full border-2 border-cyan-500/50 bg-zinc-950 sm:size-[23px]"
+              aria-hidden="true"
+            >
+              <div class="size-1.5 rounded-full bg-cyan-400 sm:size-2" />
+            </div>
+
+            <article class="card-surface p-5 sm:p-6">
+              <div class="mb-4 flex flex-col gap-1 sm:flex-row sm:items-start sm:justify-between">
+                <div>
+                  <h3 class="text-lg font-semibold text-zinc-100">{job.role}</h3>
+                  <p class="font-code text-sm text-cyan-400">{job.company}</p>
+                </div>
+                <div class="mt-1 flex flex-col gap-0.5 text-right sm:mt-0">
+                  <time class="font-code text-xs text-zinc-500">{job.period}</time>
+                  <span class="font-code text-xs text-zinc-600">{job.location}</span>
+                </div>
+              </div>
+
+              <ul class="mb-5 space-y-2">
+                {job.achievements.map((achievement) => (
+                  <li class="flex gap-2 text-sm leading-relaxed text-zinc-400">
+                    <span class="mt-2 size-1 shrink-0 rounded-full bg-cyan-500/50" aria-hidden="true" />
+                    {achievement}
+                  </li>
+                ))}
+              </ul>
+
+              <div class="flex flex-wrap gap-2">
+                {job.keyTechnologies.map((tech) => (
+                  <span class="tech-pill">{tech}</span>
+                ))}
+              </div>
+            </article>
+
+            {index === 0 && (
+              <span class="absolute -top-1 left-8 font-code text-[10px] text-cyan-500/40 sm:left-10">
+                // current
+              </span>
+            )}
+          </li>
+        ))
+      }
+    </ol>
+  </div>
+</section>

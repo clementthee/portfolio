@@ -1,0 +1,18 @@
+# Reglas de Arquitectura y Estilo para Cursor
+
+## Stack Tecnológico
+- Framework: Astro (Server-Driven Component Architecture).
+- Estilos: Tailwind CSS.
+- Componentes Interactivos: React (.tsx) usando Framer Motion y Lucide React.
+- Lenguaje: TypeScript estricto.
+
+## Pautas de Desarrollo
+1. Preferir componentes de Astro (.astro) para contenido estático, maquetación y SEO.
+2. Usar componentes de React (.tsx) ÚNICAMENTE cuando se requiera interactividad en el cliente (estado, animaciones complejas, eventos).
+3. Todo componente de React consumido en una página de Astro DEBE incluir la directiva de hidratación explícita (ejemplo: client:visible o client:load).
+4. Mantener la estructura de imports utilizando alias de TypeScript:
+   - @/components/*
+   - @/layouts/*
+   - @/data/*
+   - @/types/*
+5. Estilo visual: Diseñar bajo una estética 'Developer Dashboard' en Dark Mode, minimalista, moderna, limpia y orientada a ingeniería de software.
