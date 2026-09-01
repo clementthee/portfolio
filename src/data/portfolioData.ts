@@ -15,18 +15,36 @@ export const portfolioData: PortfolioData = {
         'https://wa.me/50236939072?text=Hola%20Hector,%20vi%20tu%20portafolio%20y%20me%20gustaria%20conversar%20contigo.',
     },
   },
+  hero: {
+    availability: {
+      es: 'Open for Backend & Platform opportunities',
+      en: 'Open for Backend & Platform opportunities',
+    },
+    summary: {
+      es: 'Ingeniero de software enfocado en diseño de sistemas, APIs REST/GraphQL, arquitecturas escalables y diagnóstico de logs para resolver incidencias de plataforma con precisión técnica.',
+      en: 'Software engineer focused on systems design, REST/GraphQL APIs, scalable architectures, and log diagnostics to resolve platform incidents with technical precision.',
+    },
+  },
   experience: [
     {
       company: 'monday.com',
       role: 'Technical Support Engineer (TSE)',
       period: '2025 - Present',
       location: 'Remote',
-      achievements: [
-        'Diagnóstico y resolución de incidencias en la plataforma monday.com',
-        'Análisis de logs con herramientas de AI para identificar causas raíz',
-        'Integración y consumo de APIs REST y GraphQL',
-        'Trabajo con entornos containerizados en Docker',
-      ],
+      achievements: {
+        es: [
+          'Diagnóstico y resolución de incidencias en la plataforma monday.com',
+          'Análisis de logs con herramientas de AI para identificar causas raíz',
+          'Integración y consumo de APIs REST y GraphQL',
+          'Trabajo con entornos containerizados en Docker',
+        ],
+        en: [
+          'Diagnosed and resolved incidents on the monday.com platform',
+          'Performed AI-powered log analysis to identify root causes',
+          'Integrated and consumed REST and GraphQL APIs',
+          'Worked with containerized environments using Docker',
+        ],
+      },
       keyTechnologies: ['REST', 'GraphQL', 'Docker', 'AI', 'Log Analysis'],
     },
     {
@@ -34,11 +52,18 @@ export const portfolioData: PortfolioData = {
       role: 'Data Analyst',
       period: '2024 - 2025',
       location: 'Remote',
-      achievements: [
-        'Desarrollo de data pipelines en R y SQL',
-        'Creación de dashboards en Tableau y Looker',
-        'Resolución de discrepancias y validación de integridad de datos',
-      ],
+      achievements: {
+        es: [
+          'Desarrollo de data pipelines en R y SQL',
+          'Creación de dashboards en Tableau y Looker',
+          'Resolución de discrepancias y validación de integridad de datos',
+        ],
+        en: [
+          'Built data pipelines in R and SQL',
+          'Created dashboards in Tableau and Looker',
+          'Resolved data discrepancies and validated data integrity',
+        ],
+      },
       keyTechnologies: ['R', 'SQL', 'Tableau', 'Looker', 'Data Pipelines'],
     },
     {
@@ -46,23 +71,35 @@ export const portfolioData: PortfolioData = {
       role: 'Technical Support Specialist',
       period: '2021 - 2024',
       location: 'Remote',
-      achievements: [
-        'Soporte técnico de ecosistemas IoT (termostatos y sensores inteligentes)',
-        'Diagnóstico de problemas hardware-software en dispositivos conectados',
-        'Escalamiento y documentación de incidencias complejas',
-      ],
+      achievements: {
+        es: [
+          'Soporte técnico de ecosistemas IoT (termostatos y sensores inteligentes)',
+          'Diagnóstico de problemas hardware-software en dispositivos conectados',
+          'Escalamiento y documentación de incidencias complejas',
+        ],
+        en: [
+          'Provided technical support for IoT ecosystems (smart thermostats and sensors)',
+          'Diagnosed hardware-software issues on connected devices',
+          'Escalated and documented complex incidents',
+        ],
+      },
       keyTechnologies: ['IoT', 'Hardware Diagnostics', 'Customer Support'],
     },
   ],
   projects: [
     {
       title: 'aura-engine',
-      description:
-        "Proyecto desarrollado para la hackatón 'The Next Craft'. Engine/plataforma enfocada en arquitectura moderna con integraciones de AI.",
+      description: {
+        es: "Proyecto desarrollado para la hackatón 'The Next Craft'. Engine/plataforma enfocada en arquitectura moderna con integraciones de AI.",
+        en: "Project built for 'The Next Craft' hackathon. Engine/platform focused on modern architecture with AI integrations.",
+      },
       technologies: ['Next.js', 'TypeScript', 'Convex', 'React', 'Tailwind CSS', 'OpenRouter', 'Clerk'],
       repository: 'https://github.com/jordidimass/auraengine',
       featured: true,
-      hackathon: 'The Next Craft Hackathon — Participant',
+      hackathon: {
+        es: 'The Next Craft Hackathon — Participant',
+        en: 'The Next Craft Hackathon — Participant',
+      },
     },
   ],
   education: [
@@ -129,19 +166,19 @@ export const portfolioData: PortfolioData = {
   ],
   skills: [
     {
-      category: 'Lenguajes',
+      category: { es: 'Lenguajes', en: 'Languages' },
       skills: ['TypeScript', 'JavaScript', 'Python', 'SQL', 'PHP', 'R'],
     },
     {
-      category: 'Backend & APIs',
-      skills: ['REST', 'GraphQL', 'Node.js', 'Webhooks', 'Microservicios'],
+      category: { es: 'Backend & APIs', en: 'Backend & APIs' },
+      skills: ['REST', 'GraphQL', 'Node.js', 'Webhooks', 'Microservices'],
     },
     {
-      category: 'Cloud & DevOps',
+      category: { es: 'Cloud & DevOps', en: 'Cloud & DevOps' },
       skills: ['AWS (Lambda, DynamoDB, API Gateway)', 'Docker', 'Git', 'Linux'],
     },
     {
-      category: 'Bases de Datos',
+      category: { es: 'Bases de Datos', en: 'Databases' },
       skills: ['PostgreSQL', 'MySQL', 'BigQuery'],
     },
   ],

@@ -1,3 +1,15 @@
+export type Locale = 'es' | 'en';
+
+export interface LocalizedString {
+  es: string;
+  en: string;
+}
+
+export interface LocalizedStringArray {
+  es: string[];
+  en: string[];
+}
+
 export interface SocialLinks {
   github?: string;
   linkedin?: string;
@@ -14,23 +26,28 @@ export interface PersonalDetails {
   social: SocialLinks;
 }
 
+export interface HeroContent {
+  availability: LocalizedString;
+  summary: LocalizedString;
+}
+
 export interface WorkExperience {
   company: string;
   role: string;
   period: string;
   location: string;
-  achievements: string[];
+  achievements: LocalizedStringArray;
   keyTechnologies: string[];
 }
 
 export interface Project {
   title: string;
-  description: string;
+  description: LocalizedString;
   technologies: string[];
   repository?: string;
   demo?: string;
   featured: boolean;
-  hackathon?: string;
+  hackathon?: LocalizedString;
 }
 
 export interface Education {
@@ -58,12 +75,13 @@ export interface Certification {
 }
 
 export interface SkillCategory {
-  category: string;
+  category: LocalizedString;
   skills: string[];
 }
 
 export interface PortfolioData {
   personal: PersonalDetails;
+  hero: HeroContent;
   experience: WorkExperience[];
   projects: Project[];
   education: Education[];
