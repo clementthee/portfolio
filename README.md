@@ -26,6 +26,7 @@ Personal portfolio built with Astro, React, Tailwind CSS, and TypeScript.
 | Production branch | `main` |
 | Build command | `npm run build` |
 | **Deploy command** | **Leave empty** (do not use Wrangler in CI) |
+| **Version command** | **Leave empty** (Workers only; not for static Astro) |
 | Build output directory | `dist` |
 | Root directory | `/` (empty) |
 | Framework preset | None or Astro |
@@ -36,9 +37,12 @@ Personal portfolio built with Astro, React, Tailwind CSS, and TypeScript.
 | :--- | :--- |
 | `NODE_VERSION` | `22` (or rely on [`.node-version`](.node-version)) |
 
-**Do not set `CLOUDFLARE_API_TOKEN`** for Git deploy — Pages publishes `dist/` automatically after the build. A DNS-only token will cause `Authentication error [code: 10000]` if used with `wrangler pages deploy`.
+**Do not set `CLOUDFLARE_API_TOKEN`** for Git deploy — Pages publishes `dist/` automatically after the build. Remove it from Environment variables if present.
 
-**Common mistake:** using `npx wrangler deploy` or `npx wrangler pages deploy` as Deploy command. That flow is for Workers or manual CLI deploys, not for Astro static sites with Git integration.
+**Common mistakes:**
+- `npx wrangler pages deploy ...` as Deploy command (use empty + output `dist` instead)
+- `npx wrangler versions upload` as Version command (Workers only)
+- `account_id` in `wrangler.toml` breaks Pages Git deploy if Wrangler runs in CI
 
 Cloudflare will deploy automatically on every push to `main`.
 
