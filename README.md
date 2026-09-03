@@ -17,18 +17,30 @@ Personal portfolio built with Astro, React, Tailwind CSS, and TypeScript.
 
 ### Git integration (production)
 
-1. Push this repo to **`clementthee/portfolio`** on GitHub.
+1. Push this repo to **`clementthee/portfolio`** on GitHub (`main` branch).
 2. In **Cloudflare Dashboard → Workers & Pages → Create → Connect to Git**, connect the repository.
-3. Configure the build:
+3. Configure the build in **Settings → Builds**:
 
 | Setting | Value |
 | :--- | :--- |
 | Production branch | `main` |
 | Build command | `npm run build` |
+| **Deploy command** | **Leave empty** (do not use Wrangler in CI) |
 | Build output directory | `dist` |
-| Environment variable | `NODE_VERSION=22` |
+| Root directory | `/` (empty) |
+| Framework preset | None or Astro |
 
-Cloudflare will deploy automatically on every push to the production branch.
+4. In **Settings → Environment variables** (Build):
+
+| Variable | Value |
+| :--- | :--- |
+| `NODE_VERSION` | `22` (or rely on [`.node-version`](.node-version)) |
+
+**Do not set `CLOUDFLARE_API_TOKEN`** for Git deploy — Pages publishes `dist/` automatically after the build. A DNS-only token will cause `Authentication error [code: 10000]` if used with `wrangler pages deploy`.
+
+**Common mistake:** using `npx wrangler deploy` or `npx wrangler pages deploy` as Deploy command. That flow is for Workers or manual CLI deploys, not for Astro static sites with Git integration.
+
+Cloudflare will deploy automatically on every push to `main`.
 
 ### Custom domain
 
@@ -39,9 +51,9 @@ In the Pages project → **Custom domains**:
 
 If the domain is already in your Cloudflare account, DNS records are created automatically.
 
-### Manual deploy (preview / testing)
+### Manual deploy (preview / testing only)
 
-Requires [Wrangler](https://developers.cloudflare.com/workers/wrangler/) and authentication:
+For local testing with Wrangler (not used by Git CI):
 
 ```bash
 npx wrangler login
@@ -53,6 +65,8 @@ Or after a build:
 ```bash
 npx wrangler pages deploy dist --project-name=clementthee-portfolio
 ```
+
+Requires an API token with **Cloudflare Pages → Edit** permission, or interactive `wrangler login`.
 
 ## Project structure
 
