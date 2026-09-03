@@ -8,6 +8,8 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
+    "check": "astro check",
+    "check:watch": "astro check --watch",
     "preview": "astro preview",
     "deploy:preview": "npm run build && wrangler pages deploy dist --project-name=clementthee-portfolio",
     "astro": "astro"
@@ -30,6 +32,9 @@
     "esbuild": true
   },
   "devDependencies": {
+    "@astrojs/check": "^0.9.10",
+    "@types/node": "^26.4.1",
+    "typescript": "^6.0.0",
     "wrangler": "^4.128.0"
   }
 }

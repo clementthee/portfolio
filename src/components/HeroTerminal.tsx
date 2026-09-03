@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState, type SyntheticEvent } from 'react';
 import { portfolioData } from '@/data/portfolioData';
 import type { Locale } from '@/types/portfolio';
 import { useLanguage } from '@/hooks/useLanguage';
@@ -89,7 +89,7 @@ export default function HeroTerminal() {
     ]);
   }
 
-  function handleSubmit(event: React.FormEvent) {
+  function handleSubmit(event: SyntheticEvent<HTMLFormElement>) {
     event.preventDefault();
     const command = input.trim();
     if (!command) return;

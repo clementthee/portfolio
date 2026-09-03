@@ -9,6 +9,7 @@ Personal portfolio built with Astro, React, Tailwind CSS, and TypeScript.
 | `npm install` | Install dependencies |
 | `npm run dev` | Start dev server at `localhost:4321` |
 | `npm run build` | Build production site to `./dist/` |
+| `npm run check` | Type-check Astro and TypeScript sources |
 | `npm run preview` | Preview the production build locally |
 | `npm run deploy:preview` | Build and deploy to Cloudflare Pages (manual) |
 
@@ -22,7 +23,7 @@ Personal portfolio built with Astro, React, Tailwind CSS, and TypeScript.
 
 | Setting | Value |
 | :--- | :--- |
-| Production branch | `master` or `main` |
+| Production branch | `main` |
 | Build command | `npm run build` |
 | Build output directory | `dist` |
 | Environment variable | `NODE_VERSION=22` |
