@@ -11,7 +11,7 @@
     "check": "astro check",
     "check:watch": "astro check --watch",
     "preview": "astro preview",
-    "deploy:preview": "npm run build && wrangler pages deploy dist --project-name=clementthee-portfolio",
+    "deploy:preview": "npm run build && wrangler deploy",
     "astro": "astro"
   },
   "dependencies": {

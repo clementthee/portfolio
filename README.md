@@ -11,53 +11,44 @@ Personal portfolio built with Astro, React, Tailwind CSS, and TypeScript.
 | `npm run build` | Build production site to `./dist/` |
 | `npm run check` | Type-check Astro and TypeScript sources |
 | `npm run preview` | Preview the production build locally |
-| `npm run deploy:preview` | Build and deploy to Cloudflare Pages (manual) |
+| `npm run deploy:preview` | Build and deploy to Cloudflare Workers (manual) |
 
-## Deploy — Cloudflare Pages
+## Deploy — Cloudflare Workers Builds
 
-### Git integration (production)
+This project deploys as **Workers Static Assets** (Astro static site). The Git integration uses **Workers → Create application → Connect to Git**.
 
-1. Push this repo to **`clementthee/portfolio`** on GitHub (`main` branch).
-2. In **Cloudflare Dashboard → Workers & Pages → Create → Connect to Git**, connect the repository.
-3. Configure the build in **Settings → Builds**:
+### Create and deploy (dashboard)
 
 | Setting | Value |
 | :--- | :--- |
+| Project name | `portfolio` |
 | Production branch | `main` |
 | Build command | `npm run build` |
-| **Deploy command** | **Leave empty** (do not use Wrangler in CI) |
-| **Version command** | **Leave empty** (Workers only; not for static Astro) |
-| Build output directory | `dist` |
-| Root directory | `/` (empty) |
-| Framework preset | None or Astro |
+| **Deploy command** | `npx wrangler deploy` |
+| **Version command** | `npx wrangler versions upload` |
+| Root directory | `/` |
 
-4. In **Settings → Environment variables** (Build):
+### Environment variables
 
-| Variable | Value |
+| Variable | Action |
 | :--- | :--- |
-| `NODE_VERSION` | `22` (or rely on [`.node-version`](.node-version)) |
+| `NODE_VERSION` | Optional `22` (or use [`.node-version`](.node-version)) |
+| `CLOUDFLARE_API_TOKEN` | **Remove** if set with DNS-only permissions (causes auth errors). Workers Builds usually authenticates via Git integration. |
 
-**Do not set `CLOUDFLARE_API_TOKEN`** for Git deploy — Pages publishes `dist/` automatically after the build. Remove it from Environment variables if present.
+If deploy fails with auth errors, create a new API token with **Workers Scripts → Edit** and **Account Settings → Read**.
 
-**Common mistakes:**
-- `npx wrangler pages deploy ...` as Deploy command (use empty + output `dist` instead)
-- `npx wrangler versions upload` as Version command (Workers only)
-- `account_id` in `wrangler.toml` breaks Pages Git deploy if Wrangler runs in CI
+**Do not use** `npx wrangler pages deploy` — that is the legacy Pages flow and does not match this Workers setup.
 
-Cloudflare will deploy automatically on every push to `main`.
+Cloudflare deploys automatically on every push to `main`.
 
 ### Custom domain
 
-In the Pages project → **Custom domains**:
+In the Workers project → **Custom domains**:
 
 1. Add `clementthee.com` (apex).
 2. Add `www.clementthee.com` and redirect to apex (recommended).
 
-If the domain is already in your Cloudflare account, DNS records are created automatically.
-
-### Manual deploy (preview / testing only)
-
-For local testing with Wrangler (not used by Git CI):
+### Manual deploy (local testing)
 
 ```bash
 npx wrangler login
@@ -67,10 +58,10 @@ npm run deploy:preview
 Or after a build:
 
 ```bash
-npx wrangler pages deploy dist --project-name=clementthee-portfolio
+npx wrangler deploy
 ```
 
-Requires an API token with **Cloudflare Pages → Edit** permission, or interactive `wrangler login`.
+Requires `wrangler login` or an API token with **Workers Scripts → Edit**.
 
 ## Project structure
 
