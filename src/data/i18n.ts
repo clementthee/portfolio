@@ -40,6 +40,8 @@ const strings = {
   sendEmail: { es: 'Enviar correo', en: 'Send Email' },
   viewCv: { es: 'Ver CV actualizado', en: 'View Updated Resume' },
   socialLinks: { es: 'social_links', en: 'social_links' },
+  watchYoutube: { es: 'YouTube', en: 'YouTube' },
+  navYoutube: { es: 'Canal de YouTube', en: 'YouTube Channel' },
   contactLocation: { es: 'Villa Nueva, Guatemala', en: 'Villa Nueva, Guatemala' },
 
   footerBuilt: {

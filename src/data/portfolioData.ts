@@ -7,12 +7,13 @@ export const portfolioData: PortfolioData = {
     location: 'Guatemala',
     email: 'clementthee@gmail.com',
     phone: '(+502) 3693-9072',
-    portfolio: 'https://github.com/clementthee/portfolio',
+    portfolio: 'https://clementthee.com',
     social: {
       github: 'https://github.com/clementthee',
       linkedin: 'https://www.linkedin.com/in/hector-clemente-martinez-perez/',
       whatsapp:
         'https://wa.me/50236939072?text=Hola%20Hector,%20vi%20tu%20portafolio%20y%20me%20gustaria%20conversar%20contigo.',
+      youtube: 'https://www.youtube.com/@hector.techandrides',
     },
   },
   hero: {
@@ -100,6 +101,16 @@ export const portfolioData: PortfolioData = {
         es: 'The Next Craft Hackathon — Participant',
         en: 'The Next Craft Hackathon — Participant',
       },
+    },
+    {
+      title: 'hyprland-dotfiles',
+      description: {
+        es: 'Dotfiles personales para entorno Hyprland en Arch Linux: configuración de ventanas, barra de estado y tema coherente.',
+        en: 'Personal dotfiles for a Hyprland setup on Arch Linux: window management, status bar, and cohesive theming.',
+      },
+      technologies: ['Hyprland', 'Arch Linux', 'Waybar', 'Kitty', 'CSS'],
+      repository: 'https://github.com/clementthee/hyprland-dotfiles',
+      featured: false,
     },
   ],
   education: [

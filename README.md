@@ -1,43 +1,70 @@
-# Astro Starter Kit: Minimal
+# Portfolio — clementthee.com
 
-```sh
-npm create astro@latest -- --template minimal
+Personal portfolio built with Astro, React, Tailwind CSS, and TypeScript.
+
+## Commands
+
+| Command | Action |
+| :--- | :--- |
+| `npm install` | Install dependencies |
+| `npm run dev` | Start dev server at `localhost:4321` |
+| `npm run build` | Build production site to `./dist/` |
+| `npm run preview` | Preview the production build locally |
+| `npm run deploy:preview` | Build and deploy to Cloudflare Pages (manual) |
+
+## Deploy — Cloudflare Pages
+
+### Git integration (production)
+
+1. Push this repo to **`clementthee/portfolio`** on GitHub.
+2. In **Cloudflare Dashboard → Workers & Pages → Create → Connect to Git**, connect the repository.
+3. Configure the build:
+
+| Setting | Value |
+| :--- | :--- |
+| Production branch | `master` or `main` |
+| Build command | `npm run build` |
+| Build output directory | `dist` |
+| Environment variable | `NODE_VERSION=22` |
+
+Cloudflare will deploy automatically on every push to the production branch.
+
+### Custom domain
+
+In the Pages project → **Custom domains**:
+
+1. Add `clementthee.com` (apex).
+2. Add `www.clementthee.com` and redirect to apex (recommended).
+
+If the domain is already in your Cloudflare account, DNS records are created automatically.
+
+### Manual deploy (preview / testing)
+
+Requires [Wrangler](https://developers.cloudflare.com/workers/wrangler/) and authentication:
+
+```bash
+npx wrangler login
+npm run deploy:preview
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+Or after a build:
 
-## 🚀 Project Structure
+```bash
+npx wrangler pages deploy dist --project-name=clementthee-portfolio
+```
 
-Inside of your Astro project, you'll see the following folders and files:
+## Project structure
 
 ```text
 /
-├── public/
+├── public/          # Static assets (e.g. cv.pdf)
 ├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
+│   ├── components/  # Astro + React components
+│   ├── data/        # Portfolio data and i18n
+│   ├── layouts/     # Base layout
+│   ├── pages/       # Routes
+│   ├── stores/      # Shared client state
+│   └── types/       # TypeScript types
+├── astro.config.mjs
+└── wrangler.toml
 ```
-
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).

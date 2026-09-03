@@ -44,6 +44,7 @@ function getCommandOutput(command: string, locale: Locale, t: (key: import('@/da
         `phone:    ${portfolioData.personal.phone}`,
         `github:   ${portfolioData.personal.social.github ?? '—'}`,
         `linkedin: ${portfolioData.personal.social.linkedin ?? '—'}`,
+        `youtube:  ${portfolioData.personal.social.youtube ?? '—'}`,
         `whatsapp: ${portfolioData.personal.social.whatsapp ? t('terminalWhatsappAvailable') : '—'}`,
       ];
     case 'clear':

@@ -94,6 +94,11 @@ export default function ContactSection() {
                   GitHub
                 </a>
               )}
+              {personal.social.youtube && (
+                <a href={personal.social.youtube} target="_blank" rel="noopener noreferrer" className="btn-secondary text-sm">
+                  {t('watchYoutube')}
+                </a>
+              )}
             </div>
           </div>
         </div>

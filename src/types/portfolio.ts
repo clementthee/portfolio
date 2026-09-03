@@ -14,6 +14,7 @@ export interface SocialLinks {
   github?: string;
   linkedin?: string;
   whatsapp?: string;
+  youtube?: string;
 }
 
 export interface PersonalDetails {
