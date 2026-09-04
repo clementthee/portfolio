@@ -43,10 +43,27 @@ Cloudflare deploys automatically on every push to `main`.
 
 ### Custom domain
 
-In the Workers project → **Custom domains**:
+Live URL (Workers): `https://portfolio.clementthee.workers.dev`
 
-1. Add `clementthee.com` (apex).
-2. Add `www.clementthee.com` and redirect to apex (recommended).
+Custom domains are declared in [`wrangler.toml`](wrangler.toml) and provisioned on each `wrangler deploy`:
+
+```toml
+[[routes]]
+pattern = "clementthee.com"
+custom_domain = true
+
+[[routes]]
+pattern = "www.clementthee.com"
+custom_domain = true
+```
+
+Requirements:
+- Zone `clementthee.com` must exist in your Cloudflare account.
+- Remove conflicting DNS records (old Pages CNAMEs) before the first custom-domain deploy.
+
+Optional in dashboard: **Workers & Pages → portfolio → Settings → Domains & Routes** to confirm both hostnames are attached.
+
+For `www` → apex redirect, configure in **Rules → Redirect Rules** or add a `_redirects` file under `public/`.
 
 ### Manual deploy (local testing)
 
