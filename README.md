@@ -60,10 +60,22 @@ custom_domain = true
 Requirements:
 - Zone `clementthee.com` must exist in your Cloudflare account.
 - Remove conflicting DNS records (old Pages CNAMEs) before the first custom-domain deploy.
+- **Do not use** `public/_redirects` with absolute URLs — Workers Static Assets only allow relative paths and will fail deploy (error 100324).
 
-Optional in dashboard: **Workers & Pages → portfolio → Settings → Domains & Routes** to confirm both hostnames are attached.
+Confirm in dashboard: **Workers & Pages → portfolio → Settings → Domains & Routes** that `clementthee.com` and `www.clementthee.com` are attached.
 
-For `www` → apex redirect, configure in **Rules → Redirect Rules** or add a `_redirects` file under `public/`.
+#### www → apex redirect (subdomain)
+
+Do **not** use `_redirects` for www → apex. Configure in **Cloudflare Dashboard → clementthee.com → Rules → Redirect Rules**:
+
+| Field | Value |
+| :--- | :--- |
+| Rule name | `www to apex` |
+| Expression | `(http.host eq "www.clementthee.com")` |
+| Action | Dynamic redirect to `concat("https://clementthee.com", http.request.uri.path)` |
+| Status code | `301` |
+
+SSL/TLS mode: **Full** or **Full (strict)**.
 
 ### Manual deploy (local testing)
 
