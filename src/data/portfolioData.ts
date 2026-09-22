@@ -112,6 +112,17 @@ export const portfolioData: PortfolioData = {
       repository: 'https://github.com/clementthee/hyprland-dotfiles',
       featured: false,
     },
+    {
+      title: 'Recovery & Strength Tracker',
+      description: {
+        es: 'Registro local-first de hábitos, entrenamiento y recuperación circadiana. Instalable como PWA; los datos permanecen en el navegador del usuario.',
+        en: 'Local-first habit, training, and circadian recovery log. Installable PWA; data stays in each visitor’s browser.',
+      },
+      technologies: ['React', 'TypeScript', 'Vite', 'Dexie', 'Tailwind CSS', 'Recharts'],
+      repository: 'https://github.com/clementthee/Recovery-Strength-Tracker',
+      demo: 'https://tracker.clementthee.com',
+      featured: false,
+    },
   ],
   education: [
     {

@@ -78,16 +78,30 @@ export default function ProjectsSection() {
                       ))}
                     </div>
 
-                    {project.repository && (
-                      <a
-                        href={project.repository}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="btn-primary mt-auto w-fit text-xs sm:text-sm"
-                      >
-                        <GithubIcon size={16} />
-                        {t('viewOnGithub')}
-                      </a>
+                    {(project.demo || project.repository) && (
+                      <div className="mt-auto flex flex-wrap gap-3">
+                        {project.demo && (
+                          <a
+                            href={project.demo}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="btn-primary w-fit text-xs sm:text-sm"
+                          >
+                            {t('openApp')}
+                          </a>
+                        )}
+                        {project.repository && (
+                          <a
+                            href={project.repository}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className={`w-fit text-xs sm:text-sm ${project.demo ? 'btn-secondary' : 'btn-primary'}`}
+                          >
+                            <GithubIcon size={16} />
+                            {t('viewOnGithub')}
+                          </a>
+                        )}
+                      </div>
                     )}
                   </div>
                 </article>
@@ -130,15 +144,29 @@ export default function ProjectsSection() {
                       </span>
                     ))}
                   </div>
-                  {project.repository && (
-                    <a
-                      href={project.repository}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="btn-secondary mt-auto w-fit text-xs"
-                    >
-                      {t('viewOnGithub')}
-                    </a>
+                  {(project.demo || project.repository) && (
+                    <div className="mt-auto flex flex-wrap gap-3">
+                      {project.demo && (
+                        <a
+                          href={project.demo}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="btn-primary w-fit text-xs"
+                        >
+                          {t('openApp')}
+                        </a>
+                      )}
+                      {project.repository && (
+                        <a
+                          href={project.repository}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="btn-secondary w-fit text-xs"
+                        >
+                          {t('viewOnGithub')}
+                        </a>
+                      )}
+                    </div>
                   )}
                 </article>
               );

@@ -22,6 +22,7 @@ const strings = {
 
   hackathonLabel: { es: '🏆 hackathon project', en: '🏆 hackathon project' },
   viewOnGithub: { es: 'Ver en GitHub', en: 'View on GitHub' },
+  openApp: { es: 'Abrir app', en: 'Open app' },
   viewRepoAria: { es: 'Ver repositorio de', en: 'View repository for' },
   upcomingProjects: { es: 'Próximos proyectos en desarrollo...', en: 'Upcoming projects in development...' },
 
